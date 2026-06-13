@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TarikhQuest - Mobile Prototype</title>
+  <!-- SEO & Favicon Meta -->
+  <meta name="description" content="TarikhQuest - Game ARG edukatif berbasis QR Code untuk belajar sejarah Islam secara interaktif dan menumbuhkan karakter mulia.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .section-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--card-border);
+    }
+
+    .section-card .section-title {
+      font-family: 'Cinzel', serif;
+      color: #0A3C2F;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #E8E2D5;
+      padding-bottom: 0.45rem;
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .badge-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FBF8F1 100%);
+      border: 1px solid #E8E2D5;
+      border-radius: 14px;
+      padding: 12px 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-height: 178px;
+    }
+
+    .badge-card.unlocked {
+      box-shadow: 0 6px 16px rgba(10, 60, 47, 0.08);
+    }
+
+    .badge-card.badge-locked {
+      opacity: 0.4;
+      filter: grayscale(100%);
+    }
+
+    .badge-state {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      background: rgba(10, 60, 47, 0.08);
+      color: #0A3C2F;
+    }
+
+    .badge-card.badge-locked .badge-state {
+      background: rgba(108, 125, 121, 0.16);
+      color: #5E6E6A;
+    }
+
+    .badge-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .badge-name {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+    }
+
+    .badge-desc {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .ranking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ranking-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #FDFBF7;
+      border: 1px solid #E8E2D5;
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .ranking-rank {
+      font-size: 1.4rem;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    .ranking-student {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ranking-student h4 {
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      font-weight: 700;
+      margin-bottom: 0.18rem;
+    }
+
+    .ranking-meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .ranking-xp {
+      flex: 0 0 auto;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0A3C2F;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 360px) {
+      .badge-grid {
+        gap: 8px;
+      }
+
+      .badge-card {
+        min-height: 165px;
+        padding: 10px 8px;
+      }
+
+      .badge-desc {
+        font-size: 0.66rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Container Bingkai HP (Phone Mockup Frame) -->
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      
+      <!-- Kamera/Speaker Bezel Atas HP -->
+      <div class="phone-notch"></div>
+
+      <!-- ================= VIEW -1: SPLASH SCREEN (ACTIVE FIRST) ================= -->
+      <section id="splash-screen" class="view active">
+        <div class="splash-container">
+          <div class="splash-logo-wrapper">
+            <div class="splash-emblem">🌙⭐</div>
+            <h1>TarikhQuest</h1>
+            <p class="splash-tagline">Petualangan Sejarah Islam</p>
+          </div>
+          
+          <div class="splash-loading-box">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill"></div>
+            </div>
+            <p class="loading-text">Memuat Sejarah Mulia...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= VIEW 0: PORTAL LOGIN ================= -->
+      <section id="login-portal" class="view">
+        <div class="login-container">
+          <div class="login-logo">
+            <h1>TarikhQuest</h1>
+            <p>Gerbang Petualangan Sejarah Islam</p>
+          </div>
+
+          <h3 class="portal-select-title">Pilih Gerbang Masuk:</h3>
+          
+          <div class="portal-grid">
+            <!-- Portal Siswa Card -->
+            <div class="portal-card student" id="card-login-siswa">
+              <div class="portal-icon">⚔️</div>
+              <h2>Portal Siswa</h2>
+              <p>Mulai petualangan ARG, temukan QR Code, jawab kuis, dan dapatkan lencana emas!</p>
+              <button class="btn-portal-enter">Masuk Petualangan</button>
+            </div>
+
+            <!-- Portal Guru Card -->
+            <div class="portal-card teacher" id="card-login-guru">
+              <div class="portal-icon">📜</div>
+              <h2>Portal Guru</h2>
+              <p>Pantau rekap skor kognitif, nilai afektif, dan perkembangan belajar mandiri siswa.</p>
+              <button class="btn-portal-enter">Masuk Panel Guru</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= HEADER GLOBAL (Hanya Muncul Setelah Login) ================= -->
+      <header id="global-header" style="display: none;">
+        <div class="logo">
+          <h1 id="header-logo-title">TarikhQuest</h1>
+        </div>
+        <div class="header-nav">
+          <span class="user-role-badge" id="header-role-badge">Siswa</span>
+          <button id="btn-logout" class="btn-logout">Keluar 🚪</button>
+        </div>
+      </header>
+
+      <!-- Area Konten Utama di dalam HP -->
+      <main class="container" id="main-container" style="display: none;">
+
+        <!-- ================= VIEW 1: DASHBOARD SISWA ================= -->
+        <section id="student-dashboard" class="view">
+          <!-- Profile & Stats Card -->
+          <div class="profile-card">
+            <div class="profile-header">
+              <h3>Profil Penjelajah</h3>
+              <h2 id="student-name">Ahmad Dani (Kelas 7-A)</h2>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-label">Total Skor</span>
+                <span class="stat-value" id="total-points">240 XP</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Level</span>
+                <span class="stat-value" id="student-level">Level 3 (Mubaligh)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scan QR Code Card -->
+          <div class="scan-card">
+            <div class="scan-icon">📷</div>
+            <h3>Temukan Situs Sejarah</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem; font-size: 0.85rem;">
+              Temukan QR Code petualangan di sekitar sekolahmu, klik tombol di bawah untuk memindai.
+            </p>
+            <button id="btn-scan-qr" class="btn-primary">
+              <span>📷</span> PINDAI QR CODE
+            </button>
+
+            <!-- Kotak Simulasi Pembacaan QR (Sesuai Kebutuhan Uji Coba) -->
+            <div id="scanner-sim-box" class="scanner-sim">
+              <h4>Simulasi Scanner HP</h4>
+              <p style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                Masukkan kode QR lokasi secara manual di bawah:
+              </p>
+              <input type="text" id="qr-input-sim" placeholder="Contoh: QR_HIJRAH_01" autocomplete="off">
+              <button id="btn-submit-qr" class="btn-secondary">KIRIM KODE</button>
+            </div>
+          </div>
+
+          <!-- Section Koleksi Lencana -->
+          <div class="section-card badge-section">
+            <h3 class="section-title">Koleksi Lencana Sejarah</h3>
+            <div class="badge-grid" id="badge-grid">
+              <article class="badge-card unlocked">
+                <span class="badge-state">AKTIF</span>
+                <div class="badge-icon">🐎</div>
+                <div class="badge-name">Penjelajah Hijrah</div>
+                <div class="badge-desc">Berani berkorban dan melindungi kebenaran.</div>
+              </article>
+
+              <article class="badge-card badge-locked">
+                <span class="badge-state">TERKUNCI</span>
+                <div class="badge-icon">🛡️</div>
+                <div class="badge-name">Pahlawan Badar</div>
+                <div class="badge-desc">Teguh pendirian dan siap berjuang.</div>
+              </article>
+
+              <article class="badge-card unlocked">
+                <span class="badge-state">AKTIF</span>
+                <div class="badge-icon">🕌</div>
+                <div class="badge-name">Penakluk Makkah</div>
+                <div class="badge-desc">Memaafkan musuh dan membawa perdamaian.</div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Section Peringkat Kelas -->
+          <div class="section-card ranking-section">
+            <h3 class="section-title">Peringkat Kelas 7-A</h3>
+            <div class="ranking-list">
+              <div class="ranking-row">
+                <div class="ranking-rank">🥇</div>
+                <div class="ranking-student">
+                  <h4>Ahmad Hilmy</h4>
+                  <div class="ranking-meta">Level 4 - Mujahid</div>
+                </div>
+                <div class="ranking-xp">350 XP</div>
+              </div>
+
+              <div class="ranking-row">
+                <div class="ranking-rank">🥈</div>
+                <div class="ranking-student">
+                  <h4>Aisyah Luthfiana</h4>
+                  <div class="ranking-meta">Level 3 - Mubaligh</div>
+                </div>
+                <div class="ranking-xp">240 XP</div>
+              </div>
+
+              <div class="ranking-row">
+                <div class="ranking-rank">🥉</div>
+                <div class="ranking-student">
+                  <h4>Arep Kurniawan</h4>
+                  <div class="ranking-meta">Level 2 - Penjelajah</div>
+                </div>
+                <div class="ranking-xp">180 XP</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= VIEW 2: HALAMAN MISI (PETUALANGAN) ================= -->
+        <section id="mission-page" class="view">
+          <div class="mission-header" style="margin-bottom: 1.2rem;">
+            <h2 id="mission-title" style="font-family: 'Cinzel', serif; color: var(--primary-emerald); font-size: 1.3rem;">Misi 1: Menembus Makkah</h2>
+          </div>
+
+          <!-- Cerita Pengantar -->
+          <div class="story-card">
+            <h3 style="font-size: 0.95rem; color: var(--primary-emerald); margin-bottom: 0.4rem; font-family: 'Cinzel', serif;">Kisah Petualangan</h3>
+            <p id="story-text" style="font-size: 0.88rem;">Memuat cerita...</p>
+          </div>
+
+          <!-- Accordion Ringkasan Materi -->
+          <div class="accordion">
+            <div class="accordion-header" id="accordion-header">
+              <span>📖 Materi Kunci (Situs Sejarah)</span>
+              <span id="accordion-indicator">▼</span>
+            </div>
+            <div class="accordion-content" id="accordion-content" style="font-size: 0.85rem;">
+              <p id="materi-text">Memuat materi ringkasan...</p>
+            </div>
+          </div>
+
+          <!-- Kuis Kognitif -->
+          <div class="quiz-card">
+            <h3 style="font-size: 0.95rem; color: var(--primary-emerald); margin-bottom: 0.6rem; font-family: 'Cinzel', serif;">Tantangan Kognitif (Soal)</h3>
+            <p class="question-text" id="quiz-question" style="font-size: 0.9rem;">Siapakah nama pelacak berkuda kafir Quraisy yang mengejar Rasulullah?</p>
+            <ul class="options-list" id="quiz-options" style="font-size: 0.85rem;">
+              <!-- Diisi dinamis oleh app.js -->
+            </ul>
+          </div>
+
+          <!-- Refleksi Sikap (Afektif) -->
+          <div class="reflection-card">
+            <h3 style="font-size: 0.95rem; color: var(--primary-emerald); margin-bottom: 0.6rem; font-family: 'Cinzel', serif;">Refleksi Keteladanan (Afektif)</h3>
+            
+            <label style="font-weight: 500; font-size: 0.85rem; color: var(--text-dark);">
+              1. Seberapa besar Anda terinspirasi dan setuju untuk mempraktikkan sikap tokoh di atas dalam kehidupan sehari-hari?
+            </label>
+            <div class="likert-scale" id="likert-container">
+              <!-- Tombol Likert 1-5 dinamis oleh app.js -->
+            </div>
+
+            <label style="font-weight: 500; font-size: 0.85rem; color: var(--text-dark);">
+              2. Rencana aksi nyata yang akan Anda lakukan hari ini:
+            </label>
+            <textarea id="reflection-text" placeholder="Contoh: Saya akan berani jujur ketika melihat kecurangan di kelas..."></textarea>
+          </div>
+
+          <!-- Tombol Kirim Jawaban -->
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <button id="btn-submit-mission" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.8rem; font-size: 0.95rem;">
+              KIRIM JAWABAN & SELESAIKAN MISI
+            </button>
+          </div>
+        </section>
+
+        <!-- ================= VIEW 3: DASHBOARD GURU ================= -->
+        <section id="teacher-dashboard" class="view">
+          <div class="teacher-header">
+            <h2 style="font-family: 'Cinzel', serif; color: var(--primary-emerald); font-size: 1.2rem;">Rekap Nilai Siswa (Guru Panel)</h2>
+            <button id="btn-reset-data" class="btn-reset" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">Reset Data</button>
+          </div>
+
+          <!-- Filter Pilihan Kelas & Misi -->
+          <div class="filter-bar">
+            <div>
+              <label for="filter-kelas" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Filter Kelas</label>
+              <select id="filter-kelas" class="filter-select" style="padding: 0.35rem 0.6rem; font-size: 0.8rem;">
+                <option value="all">Semua Kelas</option>
+                <option value="7-A">Kelas 7-A</option>
+                <option value="7-B">Kelas 7-B</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="filter-misi" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Filter Misi</label>
+              <select id="filter-misi" class="filter-select" style="padding: 0.35rem 0.6rem; font-size: 0.8rem;">
+                <option value="all">Semua Misi</option>
+                <option value="misi_01">Misi 1 (Hijrah)</option>
+                <option value="misi_02">Misi 2 (Piagam)</option>
+                <option value="misi_03">Misi 3 (Fathu)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Tabel Data Rekap Otomatis -->
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Misi</th>
+                  <th>Kog</th>
+                  <th>Afek</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="teacher-table-body" style="font-size: 0.78rem;">
+                <!-- Diisi dinamis oleh app.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ================= POP-UP MODAL BADGE REWARD (Di dalam HP) ================= -->
+      <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+          <div class="modal-badge-img" id="modal-badge-icon">🐎</div>
+          <h2 class="modal-title" style="font-size: 1.3rem;">Selamat! Lencana Didapatkan</h2>
+          <p style="font-size: 0.8rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;" id="modal-badge-name">
+            Penjelajah Hijrah
+          </p>
+          <p class="modal-desc" style="font-size: 0.82rem; margin-bottom: 1.2rem;">
+            Anda telah berhasil menyelesaikan kuis dan refleksi sikap pada <strong id="modal-misi-name">Misi 1</strong> dengan baik. Teruslah kumpulkan lencana lainnya!
+          </p>
+          <button id="btn-close-modal" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.7rem; font-size: 0.9rem;">
+            KEMBALI KE DASHBOARD
+          </button>
+        </div>
+      </div>
+
+      <!-- Toast Notification System (Di dalam HP) -->
+      <div id="toast-notification" class="toast">Notifikasi</div>
+
+    </div>
+  </div>
+
+  <!-- Script Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
