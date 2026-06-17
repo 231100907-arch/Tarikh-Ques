@@ -1,414 +1,294 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TarikhQuest - Portal Login</title>
-  <title>TarikhQuest - Mobile Prototype</title>
-  <!-- SEO & Favicon Meta -->
-  <meta name="description" content="TarikhQuest - Game ARG edukatif berbasis QR Code untuk belajar sejarah Islam secara interaktif dan menumbuhkan karakter mulia.">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TarikhQuest - Jelajahi Sejarah Islam</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
-  <!-- ================= VIEW 0: PORTAL LOGIN (ACTIVE BY DEFAULT) ================= -->
-  <section id="login-portal" class="view active">
-    <div class="login-container">
-      <div class="login-logo">
-        <h1>TarikhQuest</h1>
-        <p>Gerbang Petualangan Sejarah Islam & Karakter Mulia</p>
-      </div>
-  <!-- Container Bingkai HP (Phone Mockup Frame) -->
-  <div class="phone-wrapper">
-    <div class="phone-frame">
-      
-      <!-- Kamera/Speaker Bezel Atas HP -->
-      <div class="phone-notch"></div>
-      <h3 class="portal-select-title">Silakan Pilih Gerbang Masuk:</h3>
-      
-      <div class="portal-grid">
-        <!-- Portal Siswa Card -->
-        <div class="portal-card student" id="card-login-siswa">
-          <div class="portal-icon">⚔️</div>
-          <h2>Portal Siswa</h2>
-          <p>Mulai petualangan ARG, temukan QR Code sejarah, jawab kuis, dan kumpulkan lencana emas!</p>
-          <button class="btn-portal-enter">Masuk Petualangan</button>
-      <!-- ================= VIEW 0: PORTAL LOGIN (ACTIVE BY DEFAULT) ================= -->
-      <section id="login-portal" class="view active">
-        <div class="login-container">
-          <div class="login-logo">
-            <h1>TarikhQuest</h1>
-            <p>Gerbang Petualangan Sejarah Islam</p>
-          </div>
-          <h3 class="portal-select-title">Pilih Gerbang Masuk:</h3>
-          
-          <div class="portal-grid">
-            <!-- Portal Siswa Card -->
-            <div class="portal-card student" id="card-login-siswa">
-              <div class="portal-icon">⚔️</div>
-              <h2>Portal Siswa</h2>
-              <p>Mulai petualangan ARG, temukan QR Code, jawab kuis, dan dapatkan lencana emas!</p>
-              <button class="btn-portal-enter">Masuk Petualangan</button>
-            </div>
-            <!-- Portal Guru Card -->
-            <div class="portal-card teacher" id="card-login-guru">
-              <div class="portal-icon">📜</div>
-              <h2>Portal Guru</h2>
-              <p>Pantau rekap skor kognitif, nilai afektif, dan perkembangan belajar mandiri siswa.</p>
-              <button class="btn-portal-enter">Masuk Panel Guru</button>
-            </div>
-          </div>
-        </div>
-      </section>
-        <!-- Portal Guru Card -->
-        <div class="portal-card teacher" id="card-login-guru">
-          <div class="portal-icon">📜</div>
-          <h2>Portal Guru</h2>
-          <p>Pantau perkembangan belajar mandiri, rekap skor kognitif, nilai afektif, dan kelola misi.</p>
-          <button class="btn-portal-enter">Masuk Panel Guru</button>
-      <!-- ================= HEADER GLOBAL (Hanya Muncul Setelah Login) ================= -->
-      <header id="global-header" style="display: none;">
-        <div class="logo">
-          <h1 id="header-logo-title">TarikhQuest</h1>
-        </div>
-      </div>
-    </div>
-  </section>
-        <div class="header-nav">
-          <span class="user-role-badge" id="header-role-badge">Siswa</span>
-          <button id="btn-logout" class="btn-logout">Keluar 🚪</button>
-        </div>
-      </header>
-  <!-- ================= HEADER GLOBAL (Hanya Muncul Setelah Login) ================= -->
-  <header id="global-header" style="display: none;">
-    <div class="logo">
-      <h1 id="header-logo-title">TarikhQuest</h1>
-    </div>
-    <div class="header-nav">
-      <span class="user-role-badge" id="header-role-badge">Siswa</span>
-      <button id="btn-logout" class="btn-logout">Keluar🚪</button>
-    </div>
-  </header>
-      <!-- Area Konten Utama di dalam HP -->
-      <main class="container" id="main-container" style="display: none;">
-  <!-- Container Utama Aplikasi -->
-  <main class="container" id="main-container" style="display: none;">
-        <!-- ================= VIEW 1: DASHBOARD SISWA ================= -->
-        <section id="student-dashboard" class="view">
-          <!-- Profile & Stats Card -->
-          <div class="profile-card">
-            <div class="profile-header">
-              <h3>Profil Penjelajah</h3>
-              <h2 id="student-name">Ahmad Dani (Kelas 7-A)</h2>
-            </div>
-            <div class="stats-grid">
-              <div class="stat-item">
-                <span class="stat-label">Total Skor</span>
-                <span class="stat-value" id="total-points">240 XP</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Level</span>
-                <span class="stat-value" id="student-level">Level 3 (Mubaligh)</span>
-              </div>
-            </div>
-          </div>
-    <!-- ================= VIEW 1: DASHBOARD SISWA ================= -->
-    <section id="student-dashboard" class="view">
-      <!-- Profile & Stats Card -->
-      <div class="profile-card">
-        <div class="profile-header">
-          <h3>Profil Penjelajah</h3>
-          <h2 id="student-name">Ahmad Dani (Kelas 7-A)</h2>
-        </div>
-        <div class="stats-grid">
-          <div class="stat-item">
-            <span class="stat-label">Total Skor</span>
-            <span class="stat-value" id="total-points">240 XP</span>
-          <!-- Scan QR Code Card -->
-          <div class="scan-card">
-            <div class="scan-icon">📷</div>
-            <h3>Temukan Situs Sejarah</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.2rem; font-size: 0.85rem;">
-              Temukan QR Code petualangan di sekitar sekolahmu, klik tombol di bawah untuk memindai.
-            </p>
-            <button id="btn-scan-qr" class="btn-primary">
-              <span>📷</span> PINDAI QR CODE
-            </button>
-            <!-- Kotak Simulasi Pembacaan QR (Sesuai Kebutuhan Uji Coba) -->
-            <div id="scanner-sim-box" class="scanner-sim">
-              <h4>Simulasi Scanner HP</h4>
-              <p style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-                Masukkan kode QR lokasi secara manual di bawah:
-              </p>
-              <input type="text" id="qr-input-sim" placeholder="Contoh: QR_HIJRAH_01" autocomplete="off">
-              <button id="btn-submit-qr" class="btn-secondary">KIRIM KODE</button>
-            </div>
-          </div>
-          <div class="stat-item">
-            <span class="stat-label">Peringkat Level</span>
-            <span class="stat-value" id="student-level">Level 3 (Mubaligh)</span>
-          <!-- Grid Lencana / Badges -->
-          <div class="badge-section">
-            <h3 class="section-title">Koleksi Lencana Sejarah</h3>
-            <div class="badge-grid" id="badge-grid">
-              <!-- Diisi dinamis oleh app.js -->
-            </div>
-          </div>
-        </div>
-      </div>
-        </section>
-      <!-- Scan QR Code Card -->
-      <div class="scan-card">
-        <div class="scan-icon">📷</div>
-        <h3>Temukan Situs Sejarah</h3>
-        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">
-          Temukan QR Code petualangan di sekitar lingkungan sekolahmu, klik tombol di bawah untuk memindai.
-        </p>
-        <button id="btn-scan-qr" class="btn-primary">
-          <span>📷</span> PINDAI QR CODE
-        </button>
-        <!-- ================= VIEW 2: HALAMAN MISI (PETUALANGAN) ================= -->
-        <section id="mission-page" class="view">
-          <div class="mission-header" style="margin-bottom: 1.2rem;">
-            <h2 id="mission-title" style="font-family: 'Cinzel', serif; color: var(--primary-emerald); font-size: 1.3rem;">Misi 1: Menembus Makkah</h2>
-          </div>
-        <!-- Kotak Simulasi Pembacaan QR (Sesuai Kebutuhan Uji Coba) -->
-        <div id="scanner-sim-box" class="scanner-sim">
-          <h4>Simulasi Kamera Antigravity</h4>
-          <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-            Masukkan kode QR lokasi secara manual di bawah ini untuk mensimulasikan pemindaian:
-          </p>
-          <input type="text" id="qr-input-sim" placeholder="Contoh: QR_HIJRAH_01" autocomplete="off">
-          <button id="btn-submit-qr" class="btn-secondary">KIRIM KODE</button>
-        </div>
-      </div>
-          <!-- Cerita Pengantar -->
-          <div class="story-card">
-            <h3 style="font-size: 0.95rem; color: var(--primary-emerald); margin-bottom: 0.4rem; font-family: 'Cinzel', serif;">Kisah Petualangan</h3>
-            <p id="story-text" style="font-size: 0.88rem;">Memuat cerita...</p>
-          </div>
-      <!-- Grid Lencana / Badges -->
-      <div class="badge-section">
-        <h3 class="section-title">Koleksi Lencana Sejarah</h3>
-        <div class="badge-grid" id="badge-grid">
-          <!-- Diisi dinamis oleh app.js -->
-        </div>
-      </div>
-    </section>
-          <!-- Accordion Ringkasan Materi -->
-          <div class="accordion">
-            <div class="accordion-header" id="accordion-header">
-              <span>📖 Materi Kunci (Situs Sejarah)</span>
-              <span id="accordion-indicator">▼</span>
-            </div>
-            <div class="accordion-content" id="accordion-content" style="font-size: 0.85rem;">
-              <p id="materi-text">Memuat materi ringkasan...</p>
-            </div>
-          </div>
-    <!-- ================= VIEW 2: HALAMAN MISI (PETUALANGAN) ================= -->
-    <section id="mission-page" class="view">
-      <div class="mission-header" style="margin-bottom: 1.5rem;">
-        <h2 id="mission-title" style="font-family: 'Cinzel', serif; color: var(--primary-emerald);">Misi 1: Menembus Pengepungan Makkah</h2>
-      </div>
-          <!-- Kuis Kognitif -->
-          <div class="quiz-card">
-            <h3 style="font-size: 0.95rem; color: var(--primary-emerald); margin-bottom: 0.6rem; font-family: 'Cinzel', serif;">Tantangan Kognitif (Soal)</h3>
-            <p class="question-text" id="quiz-question" style="font-size: 0.9rem;">Siapakah nama pelacak berkuda kafir Quraisy yang mengejar Rasulullah?</p>
-            <ul class="options-list" id="quiz-options" style="font-size: 0.85rem;">
-              <!-- Diisi dinamis oleh app.js -->
-            </ul>
-          </div>
-      <!-- Cerita Pengantar -->
-      <div class="story-card">
-        <h3 style="font-size: 1.1rem; color: var(--primary-emerald); margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">Kisah Petualangan</h3>
-        <p id="story-text">Memuat cerita...</p>
-      </div>
-          <!-- Refleksi Sikap (Afektif) -->
-          <div class="reflection-card">
-            <h3 style="font-size: 0.95rem; color: var(--primary-emerald); margin-bottom: 0.6rem; font-family: 'Cinzel', serif;">Refleksi Keteladanan (Afektif)</h3>
-            
-            <label style="font-weight: 500; font-size: 0.85rem; color: var(--text-dark);">
-              1. Seberapa besar Anda terinspirasi dan setuju untuk mempraktikkan sikap tokoh di atas dalam kehidupan sehari-hari?
-            </label>
-            <div class="likert-scale" id="likert-container">
-              <!-- Tombol Likert 1-5 dinamis oleh app.js -->
-            </div>
-      <!-- Accordion Ringkasan Materi -->
-      <div class="accordion">
-        <div class="accordion-header" id="accordion-header">
-          <span>📖 Pelajari Materi Kunci (Situs Sejarah)</span>
-          <span id="accordion-indicator">▼</span>
-        </div>
-        <div class="accordion-content" id="accordion-content">
-          <p id="materi-text">Memuat materi ringkasan...</p>
-        </div>
-      </div>
-            <label style="font-weight: 500; font-size: 0.85rem; color: var(--text-dark);">
-              2. Rencana aksi nyata yang akan Anda lakukan hari ini:
-            </label>
-            <textarea id="reflection-text" placeholder="Contoh: Saya akan berani jujur ketika melihat kecurangan di kelas..."></textarea>
-          </div>
-      <!-- Kuis Kognitif -->
-      <div class="quiz-card">
-        <h3 style="font-size: 1.1rem; color: var(--primary-emerald); margin-bottom: 0.8rem; font-family: 'Cinzel', serif;">Tantangan Kognitif (Soal)</h3>
-        <p class="question-text" id="quiz-question">Siapakah nama pelacak berkuda kafir Quraisy yang mengejar Rasulullah?</p>
-        <ul class="options-list" id="quiz-options">
-          <!-- Diisi dinamis oleh app.js -->
-        </ul>
-      </div>
-          <!-- Tombol Kirim Jawaban -->
-          <div style="text-align: center; margin-bottom: 1.5rem;">
-            <button id="btn-submit-mission" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.8rem; font-size: 0.95rem;">
-              KIRIM JAWABAN & SELESAIKAN MISI
-            </button>
-          </div>
-        </section>
-      <!-- Refleksi Sikap (Afektif) -->
-      <div class="reflection-card">
-        <h3 style="font-size: 1.1rem; color: var(--primary-emerald); margin-bottom: 0.8rem; font-family: 'Cinzel', serif;">Refleksi Keteladanan (Afektif)</h3>
+
+    <div id="app-container">
         
-        <label style="font-weight: 500; font-size: 0.95rem; color: var(--text-dark);">
-          1. Seberapa besar Anda terinspirasi dan setuju dengan nilai keberanian/sikap tokoh di atas untuk dipraktikkan dalam kehidupan sehari-hari?
-        </label>
-        <div class="likert-scale" id="likert-container">
-          <!-- Tombol Likert 1-5 dinamis oleh app.js -->
-        </div>
-        <!-- ================= VIEW 3: DASHBOARD GURU ================= -->
-        <section id="teacher-dashboard" class="view">
-          <div class="teacher-header">
-            <h2 style="font-family: 'Cinzel', serif; color: var(--primary-emerald); font-size: 1.2rem;">Rekap Nilai Siswa (Guru Panel)</h2>
-            <button id="btn-reset-data" class="btn-reset" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">Reset Data</button>
-          </div>
-        <label style="font-weight: 500; font-size: 0.95rem; color: var(--text-dark);">
-          2. Tuliskan rencana aksi nyata yang akan Anda lakukan hari ini sebagai bentuk implementasi keteladanan tersebut:
-        </label>
-        <textarea id="reflection-text" placeholder="Contoh: Saya akan berani jujur ketika melihat kecurangan di kelas..."></textarea>
-      </div>
-          <!-- Filter Pilihan Kelas & Misi -->
-          <div class="filter-bar">
-            <div>
-              <label for="filter-kelas" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Filter Kelas</label>
-              <select id="filter-kelas" class="filter-select" style="padding: 0.35rem 0.6rem; font-size: 0.8rem;">
-                <option value="all">Semua Kelas</option>
-                <option value="7-A">Kelas 7-A</option>
-                <option value="7-B">Kelas 7-B</option>
-              </select>
+        <!-- SCREEN 1: SPLASH SCREEN -->
+        <section id="splash-screen" class="page-view">
+            <div class="splash-header">
+                <div class="splash-logo-container">
+                    <img src="assets/images/logo.png.png" alt="Logo TarikhQuest" class="main-logo pulse-logo">
+                </div>
+                <h1 class="splash-title">TARIKH<span>QUEST</span></h1>
+                <p class="splash-subtitle">Jelajahi Sejarah Islam, Temukan Hikmahnya</p>
             </div>
-      <!-- Tombol Kirim Jawaban -->
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <button id="btn-submit-mission" class="btn-primary" style="width: 100%; justify-content: center; padding: 1rem;">
-          KIRIM JAWABAN & SELESAIKAN MISI
-        </button>
-      </div>
-    </section>
-            <div>
-              <label for="filter-misi" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Filter Misi</label>
-              <select id="filter-misi" class="filter-select" style="padding: 0.35rem 0.6rem; font-size: 0.8rem;">
-                <option value="all">Semua Misi</option>
-                <option value="misi_01">Misi 1 (Hijrah)</option>
-                <option value="misi_02">Misi 2 (Piagam)</option>
-                <option value="misi_03">Misi 3 (Fathu)</option>
-              </select>
+            <div class="splash-footer">
+                <div id="splash-action">
+                    <div class="loader"></div>
+                </div>
             </div>
-          </div>
-    <!-- ================= VIEW 3: DASHBOARD GURU ================= -->
-    <section id="teacher-dashboard" class="view">
-      <div class="teacher-header">
-        <h2 style="font-family: 'Cinzel', serif; color: var(--primary-emerald);">Rekap Nilai Siswa (Guru Panel)</h2>
-        <button id="btn-reset-data" class="btn-reset">Reset Semua Data</button>
-      </div>
-          <!-- Tabel Data Rekap Otomatis -->
-          <div class="table-responsive">
-            <table>
-              <thead>
-                <tr>
-                  <th>Nama</th>
-                  <th>Misi</th>
-                  <th>Kog</th>
-                  <th>Afek</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody id="teacher-table-body" style="font-size: 0.78rem;">
-                <!-- Diisi dinamis oleh app.js -->
-              </tbody>
-            </table>
-          </div>
         </section>
-      <!-- Filter Pilihan Kelas & Misi -->
-      <div class="filter-bar">
-        <div>
-          <label for="filter-kelas" style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Filter Kelas</label>
-          <select id="filter-kelas" class="filter-select">
-            <option value="all">Semua Kelas</option>
-            <option value="7-A">Kelas 7-A</option>
-            <option value="7-B">Kelas 7-B</option>
-          </select>
+
+        <!-- SCREEN 2: LOGIN SISWA -->
+        <section id="login-screen" class="page-view login-view hidden">
+            <div class="login-header">
+                <h2 class="login-title">Pendaftaran Kafilah</h2>
+                <p class="login-subtitle">Masukkan identitasmu untuk memulai petualangan</p>
+            </div>
+            <form id="login-form" class="auth-form">
+                <div id="login-error" class="error-msg hidden">Nama dan Kelas wajib diisi!</div>
+                <div class="form-group">
+                    <label for="student-name">Nama Lengkap</label>
+                    <input type="text" id="student-name" placeholder="Contoh: Ahmad Fauzan" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="student-class">Kelas / Tingkat</label>
+                    <select id="student-class">
+                        <option value="" disabled selected>Pilih Kelas Anda</option>
+                        <option value="7">Kelas 7 (Fase D)</option>
+                        <option value="8">Kelas 8 (Fase D)</option>
+                        <option value="9">Kelas 9 (Fase D)</option>
+                        <option value="Umum">Umum / Pencinta Sejarah</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary w-full">Masuk Gerbang Siswa ➔</button>
+                <button type="button" id="btn-masuk-guru" class="btn-danger-outline w-full" style="margin-top: 12px; padding: 14px;">
+                    Masuk Sebagai Guru 🔑
+                </button>
+            </form>
+        </section>
+
+        <!-- SCREEN 2B: LOGIN KHUSUS GURU -->
+        <section id="teacher-login-screen" class="page-view login-view hidden">
+            <div class="login-header">
+                <h2 class="login-title" style="color: var(--accent-color);">Gerbang Pengajar 🔑</h2>
+                <p class="login-subtitle">Masukkan kode akses rahasia untuk masuk ke panel evaluasi</p>
+            </div>
+            <form id="teacher-login-form" class="auth-form">
+                <div id="teacher-login-error" class="error-msg hidden" style="color: var(--danger-color); font-size: 0.85rem; margin-bottom: 10px; font-weight: bold; text-align: center;">❌ Kode akses salah! Silakan coba lagi.</div>
+                
+                <div class="form-group">
+                    <label for="teacher-password">Kode Akses Guru</label>
+                    <input type="password" id="teacher-password" placeholder="Masukkan password guru" autocomplete="off">
+                </div>
+                
+                <button type="submit" class="btn-primary w-full" style="margin-top: 10px;">Masuk Panel Guru ➔</button>
+                <button type="button" id="btn-kembali-ke-siswa" class="btn-danger-outline w-full" style="margin-top: 12px; padding: 14px;">
+                    ◀ Kembali ke Login Siswa
+                </button>
+            </form>
+        </section>
+
+        <!-- SCREEN 3: DASHBOARD UTAMA SISWA -->
+        <section id="dashboard-screen" class="page-view dashboard-view hidden">
+            <div class="dashboard-header">
+                <div class="profile-meta">
+                    <p class="welcome-text">Ahlan Wa Sahlan, Mujahid!</p>
+                    <h2 id="dashboard-username" class="user-profile-name">Nama Siswa</h2>
+                    <span id="dashboard-userclass" class="badge-class">Kelas</span>
+                    <div class="badge-avatar-inline">
+                        <span class="badge-icon">🎖️</span>
+                        <span id="dashboard-badge-title" class="badge-title">Pencari Ilmu</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-card text-center">
+                    <span class="stat-label">TOTAL POIN</span>
+                    <div class="stat-value"><span id="dashboard-points">0</span> <small>XP</small></div>
+                </div>
+                
+                <div class="stat-card progress-card">
+                    <div class="progress-info">
+                        <span class="stat-label">Misi Penjelajahan</span>
+                        <span id="dashboard-progress-text" class="progress-percent">0/3 Misi</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div id="dashboard-progress-fill" class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-menu">
+                <button id="btn-scan-qr" class="menu-item-btn item-full">
+                    <span class="menu-icon">📷</span>
+                    <div class="menu-text-group">
+                        <h3>Scan QR Misi</h3>
+                        <p>Temukan kode QR sejarah di kelas</p>
+                    </div>
+                </button>
+
+                <div class="menu-grid-2x1">
+                    <button id="btn-leaderboard" class="menu-item-btn">
+                        <span class="menu-icon">🏆</span>
+                        <h3>Leaderboard</h3>
+                    </button>
+                    <button id="btn-report" class="menu-item-btn">
+                        <span class="menu-icon">📊</span>
+                        <h3>Laporan</h3>
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-footer">
+                <button class="btn-danger-outline btn-logout-global">Keluar Aplikasi</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 4: DASHBOARD UTAMA GURU -->
+        <section id="teacher-dashboard-screen" class="page-view dashboard-view hidden">
+            <div class="dashboard-header" style="border-bottom: 2px solid rgba(212,175,55,0.2); padding-bottom: 15px;">
+                <div class="profile-meta">
+                    <p class="welcome-text">Panel Evaluasi Pengajar</p>
+                    <h2 style="margin: 0; color: var(--accent-color); font-size: 1.4rem;">Dashboard Guru 👑</h2>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0;">
+                <div class="stat-card" style="padding: 12px; text-align: left;">
+                    <span style="font-size: 0.65rem; color: var(--text-muted);">TOTAL SISWA</span>
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-top:4px;">6 Siswa</div>
+                </div>
+                <div class="stat-card" style="padding: 12px; text-align: left;">
+                    <span style="font-size: 0.65rem; color: var(--text-muted);">RATA-RATA KELAS</span>
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-top:4px; color: var(--accent-color);">215 XP</div>
+                </div>
+            </div>
+
+            <h3 style="text-align: left; font-size: 0.9rem; color: var(--accent-color); margin: 15px 0 5px 0;">📝 Nilai & Capaian Siswa</h3>
+            <div class="table-responsive">
+                <table class="guru-table">
+                    <thead>
+                        <tr>
+                            <th>Nama Siswa</th>
+                            <th>Kelas</th>
+                            <th>Kognitif</th>
+                            <th>Afektif</th>
+                            <th>Total Poin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Muhammad Al-Fatih</b></td><td>Kelas 9</td><td>100/100</td><td>95/100</td><td style="color:var(--accent-color);">300 XP</td></tr>
+                        <tr><td><b>Aisyah Humaira</b></td><td>Kelas 8</td><td>100/100</td><td>98/100</td><td style="color:var(--accent-color);">290 XP</td></tr>
+                        <tr><td><b>Zaid bin Tsabit</b></td><td>Kelas 7</td><td>100/100</td><td>92/100</td><td style="color:var(--accent-color);">260 XP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="dashboard-footer" style="margin-top: 25px;">
+                <button class="btn-danger-outline btn-logout-global">Keluar Panel Guru</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 5: LEADERBOARD -->
+        <section id="leaderboard-screen" class="page-view dashboard-view hidden">
+            <div class="dashboard-header">
+                <div class="profile-meta">
+                    <p class="welcome-text">Papan Peringkat</p>
+                    <h2 class="login-title" style="margin: 0; color: var(--accent-color);">Kafilah Terbaik</h2>
+                </div>
+                <button class="btn-danger-outline" id="btn-close-leaderboard" style="padding: 8px 15px; font-size: 0.8rem;">Kembali</button>
+            </div>
+            <div class="stats-container" style="gap: 10px; margin-top: 20px;">
+                <div class="stat-card" style="flex-direction: row; justify-content: space-between; align-items: center; padding: 15px;">
+                    <span>🥇 1. <b>Muhammad Al-Fatih</b></span>
+                    <span style="color: var(--accent-color); font-weight: bold;">300 XP</span>
+                </div>
+                <div class="stat-card" style="flex-direction: row; justify-content: space-between; align-items: center; padding: 15px; background: rgba(212, 175, 55, 0.15); border: 1.5px solid var(--accent-color);">
+                    <span>⭐ 2. <b id="lb-current-user">Anda</b></span>
+                    <span style="color: var(--accent-color); font-weight: bold;"><span id="lb-current-points">0</span> XP</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 6: LAPORAN -->
+        <section id="report-screen" class="page-view dashboard-view hidden">
+            <div class="dashboard-header">
+                <div class="profile-meta">
+                    <p class="welcome-text">Capaian Akademik</p>
+                    <h2 class="login-title" style="margin: 0; color: var(--accent-color);">Laporan Tarikh</h2>
+                </div>
+                <button class="btn-danger-outline" id="btn-close-report" style="padding: 8px 15px; font-size: 0.8rem;">Kembali</button>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-label">Status Kelulusan</span>
+                    <div id="report-status-text" style="font-size: 1.1rem; font-weight: bold; color: #81c784; margin-top: 5px;">Kafilah Aktif Belajar</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Daftar Penyelesaian Misi</span>
+                    <p id="report-missions-list" style="font-size: 0.85rem; color: #e0e0e0; margin-top: 8px; text-align: left; line-height: 1.8;"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 7: BRIEFING MISI -->
+        <section id="briefing-screen" class="page-view dashboard-view hidden">
+            <div class="dashboard-header">
+                <div class="profile-meta">
+                    <p class="welcome-text">Pusat Operasi</p>
+                    <h2 class="login-title" style="color: var(--accent-color); margin: 0;">Pilih Misi Tarikh</h2>
+                </div>
+                <button class="btn-danger-outline" id="btn-cancel-mission" style="padding: 8px 15px; font-size: 0.8rem;">Kembali</button>
+            </div>
+            
+            <!-- LIST 3 MISI BERANTAI -->
+            <div class="stats-container" style="gap: 12px; margin-bottom: 15px;">
+                <div id="card-misi-1" class="stat-card" style="cursor: pointer; border-left: 5px solid var(--accent-color); text-align: left; padding: 18px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="font-size: 0.95rem;">Misi 1: Hijrah Rasulullah ﷺ</h4>
+                        <span style="color: #81c784; font-size: 0.7rem; font-weight: bold;">Terbuka</span>
+                    </div>
+                </div>
+
+                <div id="card-misi-2" class="stat-card" style="opacity: 0.5; cursor: not-allowed; text-align: left; padding: 18px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="font-size: 0.95rem;">Misi 2: Piagam Madinah</h4>
+                        <span id="status-misi-2" style="color: #ff8a80; font-size: 0.7rem; font-weight: bold;">🔒 Terkunci (100 XP)</span>
+                    </div>
+                </div>
+
+                <div id="card-misi-3" class="stat-card" style="opacity: 0.5; cursor: not-allowed; text-align: left; padding: 18px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="font-size: 0.95rem;">Misi 3: Perang Badar</h4>
+                        <span id="status-misi-3" style="color: #ff8a80; font-size: 0.7rem; font-weight: bold;">🔒 Terkunci (200 XP)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-card" style="text-align: left; width: 100%;">
+                <h4 id="briefing-title">Pilih Sesi Operasi</h4>
+                <p id="briefing-desc" style="font-size: 0.85rem; line-height: 1.6; color: #cbd5e1; margin-top: 8px;">Ketuk salah satu kartu misi di atas untuk memuat instruksi briefing sejarah.</p>
+                <button id="btn-start-mission" class="btn-primary w-full hidden" style="margin-top: 20px;">Mulai Misi ⚔️</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 8: KUIS INTERAKTIF -->
+        <section id="quiz-screen" class="page-view dashboard-view hidden">
+            <div class="dashboard-header">
+                <div class="profile-meta">
+                    <p id="quiz-mission-title" class="welcome-text">Misi 1 - Soal 1 dari 5</p>
+                    <h2 style="font-size: 1.3rem; color: var(--accent-color); margin-top: 4px;">Ujian Hikmah 📖</h2>
+                </div>
+            </div>
+            <div class="welcome-card" style="width: 100%; text-align: left; margin: 20px 0; border-left: 4px solid var(--accent-color);">
+                <p id="quiz-question-text" style="font-size: 1rem; font-weight: 600; line-height: 1.5;">Memuat pertanyaan...</p>
+            </div>
+            <div id="quiz-options-container" style="display: flex; flex-direction: column; gap: 12px; width: 100%;"></div>
+        </section>
+
+        <!-- GAME NOTIFIKASI MODAL UI -->
+        <div id="game-modal" class="modal-overlay hidden">
+            <div class="modal-box">
+                <div id="modal-icon" style="font-size: 3rem; margin-bottom: 10px;">🎉</div>
+                <h3 id="modal-title" style="color: var(--accent-color); font-size: 1.3rem;">Hasil</h3>
+                <p id="modal-message" style="font-size: 0.9rem; margin: 10px 0 20px 0; color: #cbd5e1;">Pesan...</p>
+                <button id="btn-modal-close" class="btn-primary" style="width: 100%; padding: 12px;">Lanjutkan ➔</button>
+            </div>
         </div>
-      </main>
-        <div>
-          <label for="filter-misi" style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Filter Misi</label>
-          <select id="filter-misi" class="filter-select">
-            <option value="all">Semua Misi</option>
-            <option value="misi_01">Misi 1 (Hijrah)</option>
-            <option value="misi_02">Misi 2 (Piagam Madinah)</option>
-            <option value="misi_03">Misi 3 (Fathu Makkah)</option>
-          </select>
-      <!-- ================= POP-UP MODAL BADGE REWARD (Di dalam HP) ================= -->
-      <div class="modal-overlay" id="modal-overlay">
-        <div class="modal-content">
-          <div class="modal-badge-img" id="modal-badge-icon">🐎</div>
-          <h2 class="modal-title" style="font-size: 1.3rem;">Selamat! Lencana Didapatkan</h2>
-          <p style="font-size: 0.8rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;" id="modal-badge-name">
-            Penjelajah Hijrah
-          </p>
-          <p class="modal-desc" style="font-size: 0.82rem; margin-bottom: 1.2rem;">
-            Anda telah berhasil menyelesaikan kuis dan refleksi sikap pada <strong id="modal-misi-name">Misi 1</strong> dengan baik. Teruslah kumpulkan lencana lainnya!
-          </p>
-          <button id="btn-close-modal" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.7rem; font-size: 0.9rem;">
-            KEMBALI KE DASHBOARD
-          </button>
-        </div>
-      </div>
-      <!-- Tabel Data Rekap Otomatis -->
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>Nama Siswa</th>
-              <th>Misi Tarikh</th>
-              <th>Skor Kuis (Kognitif)</th>
-              <th>Nilai Karakter (Afektif)</th>
-              <th>Status Misi</th>
-            </tr>
-          </thead>
-          <tbody id="teacher-table-body">
-            <!-- Diisi dinamis oleh app.js -->
-          </tbody>
-        </table>
-      </div>
-    </section>
-      <!-- Toast Notification System (Di dalam HP) -->
-      <div id="toast-notification" class="toast">Notifikasi</div>
-  </main>
-  <!-- ================= POP-UP MODAL BADGE REWARD ================= -->
-  <div class="modal-overlay" id="modal-overlay">
-    <div class="modal-content">
-      <div class="modal-badge-img" id="modal-badge-icon">🐎</div>
-      <h2 class="modal-title">Selamat! Lencana Didapatkan</h2>
-      <p style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;" id="modal-badge-name">
-        Penjelajah Hijrah
-      </p>
-      <p class="modal-desc">
-        Anda telah berhasil menyelesaikan seluruh tantangan kognitif dan refleksi sikap pada <strong id="modal-misi-name">Misi 1</strong> dengan baik. Teruslah kumpulkan lencana lainnya!
-      </p>
-      <button id="btn-close-modal" class="btn-primary" style="width: 100%; justify-content: center;">
-        KEMBALI KE DASHBOARD
-      </button>
+
     </div>
-  </div>
-  <!-- Toast Notification System -->
-  <div id="toast-notification" class="toast">Notifikasi</div>
-  <!-- Script Engine -->
-  <script src="app.js"></script>
+
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
